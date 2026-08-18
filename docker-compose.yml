@@ -1,5 +1,5 @@
 services:
-  # Servicio con Jupyter Notebook - ideal para aprender interactivamente
+  #   Servicio con Jupyter Notebook - ideal para aprender interactivamente
   jupyter:
     image: jupyter/minimal-notebook:latest
     container_name: python-jupyter
