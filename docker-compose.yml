@@ -1,0 +1,25 @@
+services:
+  # Servicio con Jupyter Notebook - ideal para aprender interactivamente
+  jupyter:
+    image: jupyter/minimal-notebook:latest
+    container_name: python-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=aprender   # Token simple para acceder (cámbialo si quieres)
+    restart: unless-stopped
+
+  # Servicio Python "puro" - para ejecutar scripts .py
+  python:
+    image: python:3.12-slim
+    container_name: python-scripts
+    working_dir: /app
+    volumes:
+      - ./scripts:/app
+    # tty + stdin_open te permiten entrar al contenedor con "docker compose exec"
+    tty: true
+    stdin_open: true
+    command: tail -f /dev/null   # Mantiene el contenedor vivo para poder entrar cuando quieras
