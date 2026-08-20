@@ -1,13 +1,5 @@
-"""
-Tu primer script en Python. ¡Bienvenido!
-Ejecútalo con:  docker compose exec python python hola.py
-"""
-
-nombre = input("¿Cómo te llamas? ")
-print(f"¡Hola, {nombre}! Ya estás programando en Python 🐍")
-
-# Un pequeño ejemplo con listas y bucles
-lenguajes = ["Python", "JavaScript", "Rust", "Go"]
-print("\nLenguajes populares:")
-for i, lang in enumerate(lenguajes, start=1):
-    print(f"  {i}. {lang}")
+numeros = [15, 8, 23, "asd", "16ss", 42, 11]
+print(len(numeros)) # 7 (cantidad de elementos)
+print(sum(numeros)) # 119 (suma de todos los elementos)
+print(min(numeros)) # 4 (elemento más pequeño)
+print(max(numeros)) # 42 (elemento más grande)

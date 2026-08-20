@@ -1,4 +1,3 @@
-
 lista_numeros  = [23, 45, 12, 23, 56, 89, 12, 45, 67, 23, 89, 34] 
 
 def quitar_duplicados(lista):
@@ -17,17 +16,17 @@ def get_maximo(lista_numeros):
 def get_promedio(lista_numeros):
     return max(lista_numeros)
 
-
 def get_obtener_promedio(lista_numeros):
     return sum(lista_numeros) / len(lista_numeros)
 
 
+print(f"Lista original : {lista_numeros}")
+sin_repetidos_set  = quitar_duplicados(lista_numeros)
+print(f"Lista original sin repeditdos : {sin_repetidos_set}")
 
-
-print(f"Lista original : {lista_numeros}" )
 sin_repetidos =transformar_conjunto_lista(quitar_duplicados(lista_numeros))
-#ordenamos, podiamos a ver qcreado una funcion
 sin_repetidos.sort()
+#ordenamos, podiamos a ver qcreado una funcion
 print(f"Ordenados : {sin_repetidos}" )
 
 print(f"La cantidad de valores unicos: {len(sin_repetidos)}")

@@ -24,13 +24,16 @@ def ordenar_mayores_menor(palabras):
     for palabra in palabras:
         lista_ordenada.append([palabra, palabras[palabra]])
 
+    #print(f"Lista con frecuencia en lisst: {lista_ordenada}")
+    
     # Ordenamos comparando pares de elemetnos,
     # obvioamente se puede usar funciones nativas y mejores optimizadas; 
     # # pero para implejmentar lo aprendido hasta el momento
     n = len(lista_ordenada)
     for i in range(n - 1):
+        #agarro el primero y lo compara que el rsto, dspues el segundo y asi sucesivamente
         for j in range(n - 1 - i):
-            # Comparamos hermanos . Si el de la izquierda tiene menor frecuencia que el de la derecha, 
+            # Compra hermanos y los rotas transladando el menor hacia el fondo, 
             if lista_ordenada[j][1] < lista_ordenada[j + 1][1]:
                 temporal = lista_ordenada[j]
                 lista_ordenada[j] = lista_ordenada[j + 1]
