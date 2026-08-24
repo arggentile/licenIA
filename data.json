@@ -1,0 +1,32 @@
+[
+    {
+        "edad": 22,
+        "ingresos": 35000,
+        "etiqueta": 0
+    },
+    {
+        "edad": 45,
+        "ingresos": 150,
+        "etiqueta": 1
+    },
+    {
+        "edad": 22,
+        "ingresos": 11,
+        "etiqueta": 0
+    },
+    {
+        "edad": 45,
+        "ingresos": 82000,
+        "etiqueta": 1
+    },
+    {
+        "edad": 19,
+        "ingresos": 12,
+        "etiqueta": 0
+    },
+    {
+        "edad": 45,
+        "ingresos": 82000,
+        "etiqueta": 1
+    }
+]

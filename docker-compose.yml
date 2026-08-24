@@ -19,7 +19,9 @@ services:
     working_dir: /app
     volumes:
       - ./scripts:/app
-    # tty + stdin_open te permiten entrar al contenedor con "docker compose exec"
+      # Vinculamos también el requirements.txt aquí
+      - ./requirements.txt:/app/requirements.txt
     tty: true
     stdin_open: true
-    command: tail -f /dev/null   # Mantiene el contenedor vivo para poder entrar cuando quieras
+    # Primero instala pandas y luego se queda escuchando para mantener el contenedor vivo
+    command: sh -c "pip install --no-cache-dir -r requirements.txt && tail -f /dev/null"
