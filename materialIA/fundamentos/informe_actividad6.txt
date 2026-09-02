@@ -1,0 +1,18 @@
+ACTIVIDAD 6 - DATAFRAMES CON PANDAS
+===================================
+
+Registros cargados: 7
+
+REFLEXIÓN 1:
+[Sin respuesta]
+
+REFLEXIÓN 2:
+[Sin respuesta]
+
+REFLEXIÓN 3:
+[Sin respuesta]
+
+OBSERVACIONES:
+La reflexión principal necesita más desarrollo conceptual.
+La segunda reflexión necesita un ejemplo más concreto.
+La tercera reflexión necesita describir mejor la preparación de datos.

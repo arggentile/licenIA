@@ -1,0 +1,56 @@
+ACTIVIDAD 5: LECTURA Y ESCRITURA DE DATOS
+============================================
+Fecha: 2/9/2026
+
+RESPUESTA 1 - DIFERENCIAS CONCEPTUALES:
+[Sin respuesta]
+
+RESPUESTA 2 - APLICACIÓN EN IA:
+[Sin respuesta]
+
+REFLEXIÓN ABIERTA:
+[Sin respuesta]
+
+DATOS PROCESADOS:
+[
+  {
+    "id": "1",
+    "nombre": "Juan García",
+    "edad": "28",
+    "ciudad": "Córdoba",
+    "carrera": "Ingeniería en Sistemas"
+  },
+  {
+    "id": "2",
+    "nombre": "María López",
+    "edad": "32",
+    "ciudad": "Buenos Aires",
+    "carrera": "Ciencia de Datos"
+  },
+  {
+    "id": "3",
+    "nombre": "Carlos Martínez",
+    "edad": "25",
+    "ciudad": "Mendoza",
+    "carrera": "Ingeniería en Sistemas"
+  },
+  {
+    "id": "4",
+    "nombre": "Ana Rodríguez",
+    "edad": "29",
+    "ciudad": "Córdoba",
+    "carrera": "Ingeniería en Sistemas"
+  },
+  {
+    "id": "5",
+    "nombre": "Pedro Sánchez",
+    "edad": "26",
+    "ciudad": "La Plata",
+    "carrera": "Ciencia de Datos"
+  }
+]
+
+OBSERVACIONES DE VALIDACIÓN:
+Pregunta 1: la respuesta es demasiado breve.
+Pregunta 2: la respuesta es demasiado breve.
+Reflexión abierta: desarrolla mejor tu proyecto y justificación.

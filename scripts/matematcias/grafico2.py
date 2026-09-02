@@ -22,5 +22,6 @@ plt.xlabel('Parámetro w')
 plt.ylabel('Pérdida L(w)')
 plt.title('Función de pérdida en función del parámetro w')
 plt.grid(True)
-#plt.show()
-plt.savefig('grafico2.png')
+plt.legend()
+plt.show()
+
