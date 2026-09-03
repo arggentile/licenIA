@@ -13,8 +13,6 @@ def get_minimo(lista_numeros):
 def get_maximo(lista_numeros):
     return max(lista_numeros)
 
-def get_promedio(lista_numeros):
-    return max(lista_numeros)
 
 def get_obtener_promedio(lista_numeros):
     return sum(lista_numeros) / len(lista_numeros)

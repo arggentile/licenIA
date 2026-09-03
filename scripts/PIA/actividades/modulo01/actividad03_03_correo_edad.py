@@ -1,8 +1,7 @@
 def controlar_edad(edad):
-    if(edad < 0):
+    if edad < 0:
         return False
-    else:
-        return True    
+    return True    
 
 def controlar_correeo(correo):
     deteccion_arroba = False

@@ -41,7 +41,7 @@ def validador_expresion_balanceada(expresion):
 
 expresion1 = "{[()]}"
 expresion2 = "{[(])}" 
-expresion3 = "{[()]]" 
+expresion3 = "[[()]]" 
 expresion4 = "((a + b) * (c - d))"
 
 print(f"La expresion {expresion1} es {validador_expresion_balanceada(expresion1)}")

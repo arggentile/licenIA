@@ -10,7 +10,7 @@ productos = [
 ]
 
 
-productos_por_categoria = {} # diccionario que mantendra para cada categoria lista de nombre d eproductios
+productos_por_categoria = {} # diccionario que mantendra para cada categoria lista de nombre de productos
 for nombre, categoria, precio in productos:
     if categoria in productos_por_categoria:
         productos_por_categoria[categoria].append(nombre)

@@ -1,4 +1,4 @@
-
+""" Contabilizador de frcunecias de palabras"""
 texto  = "inteligencia artificial machine learning deep learning artificial neural networks machine learning"
 
 def convertir_minusculas(texto):
@@ -14,13 +14,11 @@ def contar_frecuencia_palabras(texto):
             frecuencias[palabra] += 1
         else:
             frecuencias[palabra] = 1
-            #podiamos a ver usado la funcion get con el retorno de parametrpo por defecto
-            # frecuencias[palabra] = frecuencias.get(palabra, 0) + 1
     return frecuencias
 
 def ordenar_mayores_menor(palabras):
     lista_ordenada = []
-    #lo pasamos a lista para manipula r mejor la informaiocn
+    #lo pasamos a lista para manipula  mejor la informacion, ya que el diccionario no tiene orden
     for palabra in palabras:
         lista_ordenada.append([palabra, palabras[palabra]])
 
@@ -31,7 +29,7 @@ def ordenar_mayores_menor(palabras):
     # # pero para implejmentar lo aprendido hasta el momento
     n = len(lista_ordenada)
     for i in range(n - 1):
-        #agarro el primero y lo compara que el rsto, dspues el segundo y asi sucesivamente
+        #agarro el primero y lo compara que el resto, despues el segundo y asi sucesivamente, se van comparando pares de hermano
         for j in range(n - 1 - i):
             # Compra hermanos y los rotas transladando el menor hacia el fondo, 
             if lista_ordenada[j][1] < lista_ordenada[j + 1][1]:
