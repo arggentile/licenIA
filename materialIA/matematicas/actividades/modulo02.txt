@@ -1,0 +1,27 @@
+ 
+
+
+ La función sigmoide es útil en redes neuronales porque transforma cualquier número en un valor entre 0 y 1, lo que permite interpretar el resultado como una probabilidad.¿Qué es la función sigmoide?Es una fórmula matemática que toma un número de entrada y lo aplasta para que caiga siempre dentro del rango de 0 a 1. Su gráfica tiene forma de letra "S".Razones por las que es útilInterpretación de probabilidades: Al entregar valores entre 0 y 1, funciona muy bien en la última capa de modelos de clasificación binaria (para decidir si algo es verdadero o falso, por ejemplo).No linealidad: Permite que la red neuronal aprenda patrones complejos. Si las funciones fueran solo lineales, la red entera se comportaría como una simple línea recta sin importar cuántas capas tuviera.Derivada suave: Su curva cambia de forma gradual y continua. Esto ayuda a que los algoritmos de optimización calculen los ajustes necesarios durante el entrenamiento de la red.Limitaciones a tener en cuentaDesvanecimiento del gradiente: En entradas muy altas o muy bajas, la curva se vuelve casi plana. Esto hace que el aprendizaje se vuelva extremadamente lento en redes profundas.No centrada en cero: Sus salidas siempre son positivas (mayores a cero), lo que puede hacer que las actualizaciones de los pesos en el entrenamiento sean menos eficientes en comparación con otras funciones como Tanh.
+
+ La función ReLU (Unidad Lineal Rectificada) se usa en redes neuronales porque es muy rápida de calcular y evita que el aprendizaje se detenga en redes profunda
+ Convierte los números negativos en cero y deja los positivos igual. [1] (https://www.ultralytics.com/es/glossary/relu-rectified-linear-unit)Ventajas principalesCálculos rápidos: Usa operaciones simples que ahorran tiempo al entrenar modelos grandes.Adiós al gradiente desvanecido: A diferencia de funciones antiguas como la sigmoide, su derivada para valores positivos es siempre uno, lo que permite que la información fluya sin perder fuerza en capas profundas.No linealidad: Permite que la red aprenda patrones complejos del mundo real a pesar de parecer una línea recta en su parte positiva.Eficiencia: Apaga las neuronas con valores menores a cero, haciendo que la red sea más ligera y directa. [1] (https://www.datacamp.com/es/blog/rectified-linear-unit-relu), [2] (https://www.facebook.com/groups/MachineLearningColombia/posts/2639138719662914/), [3] (https://www.youtube.com/shorts/GinjfGcusQI), [4] (https://www.youtube.com/shorts/nSsw4Rgmvxw), [5] (https://www.reddit.com/r/deeplearning/comments/ad4cbf/why_does_relu_activation_function_work/?tl=es-419), [6] (https://www.innovatiana.com/es/post/activation-function-in-ai)
+
+
+
+ Ejercicio 2: Funciones de activación: ReLU vs Sigmoide
+
+A partir de la figura generada por el script en Python, en la cual se representan en un mismo gráfico las funciones de activación ReLU(x) y sigmoide(x), responda:
+
+a) ¿Qué función anula —es decir, lleva a 0— todos los valores negativos de la variable de entrada? Fundamente por qué este comportamiento puede resultar útil en una red neuronal.
+
+La funcion de Relu lleva a cero todos los valores para x negavitos. Es util ya que para valores negativos.
+
+b) ¿Cuál de las dos funciones considera más adecuada si se desea interpretar la salida como una probabilidad? Justifique su respuesta a partir de la forma de la gráfica.
+
+La funcion de sismoide ya que la misma toma valores comprendidos entre -1 y 1. Como son conjunto de salida restrunguido; puede sera cotado ideal para las probabilidades.
+
+c) Observando la curva correspondiente a la función sigmoide, ¿en qué intervalo de valores de  la función presenta un cambio más pronunciado? ¿Qué implicancias tiene esto para el tamaño del gradiente durante el entrenamiento, en términos de magnitud de la derivada?
+
+La funcion sigmoide presenta un gran cambio para los valolores de entrada entre -1 y 1, el tamaño de la creciente; la magnitud de la deriva en positiva; lo cual indica que un cambio creciente , si nos movemos en estos rangos segun sea para uin lado
+
+A partir de la gráfica, explique por qué la función sigmoide puede ocasionar el problema de vanishing gradient cuando la entrada adquiere valores de gran magnitud en valor absoluto.

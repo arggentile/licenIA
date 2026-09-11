@@ -1,10 +1,10 @@
-def analizar_numeros(lista_numeros):
+def analizar_numeros(numeros):
     promedio = None
-    total_datos = len(lista_numeros)
+    total_datos = len(numeros)
     maximo = None
     minimo  = None
     if(total_datos>0):
-        lista_set = set(lista_numeros) # asumimos que son todos numeros. no viene basura
+        lista_set = set(numeros) # asumimos que son todos numeros. no viene basura
         maximo = max(lista_set)
         minimo = min(lista_set)
         total = sum(lista_set)   

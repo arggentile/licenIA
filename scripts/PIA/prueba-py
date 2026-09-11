@@ -1,2 +1,0 @@
-variable = "55.5"
-print(f" Hola a todoss {str(variable)}")

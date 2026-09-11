@@ -1,0 +1,295 @@
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 1
+Ingrese el nombre del estudiante: agustin
+Ingrese el legajo del estudiante: 100
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 1
+Ingrese el nombre del estudiante: esteban
+Ingrese el legajo del estudiante: 101
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 1
+Ingrese el nombre del estudiante: santiago
+Ingrese el legajo del estudiante: 100
+El legajo 100 ya está asignado a otro estudiante. Ingrese un legajo diferente.
+Ingrese el legajo del estudiante: 102
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 1
+Ingrese el nombre del estudiante: mariana
+Ingrese el legajo del estudiante: 104
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 2
+Lista de estudiantes:
+Legajo: 100, Nombre: agustin, Promedio: 0.0, cantidad de calificaciones 0
+Legajo: 101, Nombre: esteban, Promedio: 0.0, cantidad de calificaciones 0
+Legajo: 102, Nombre: santiago, Promedio: 0.0, cantidad de calificaciones 0
+Legajo: 104, Nombre: mariana, Promedio: 0.0, cantidad de calificaciones 0
+Ingrese el nro de legajo a ingresar nota:100
+Ingrese la nota obtenida, debe estar entre 0 y 10 : 10
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 2
+Lista de estudiantes:
+Legajo: 100, Nombre: agustin, Promedio: 10.0, cantidad de calificaciones 1
+Legajo: 101, Nombre: esteban, Promedio: 0.0, cantidad de calificaciones 0
+Legajo: 102, Nombre: santiago, Promedio: 0.0, cantidad de calificaciones 0
+Legajo: 104, Nombre: mariana, Promedio: 0.0, cantidad de calificaciones 0
+Ingrese el nro de legajo a ingresar nota:101
+Ingrese la nota obtenida, debe estar entre 0 y 10 : 7
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 2
+Lista de estudiantes:
+Legajo: 100, Nombre: agustin, Promedio: 10.0, cantidad de calificaciones 1
+Legajo: 101, Nombre: esteban, Promedio: 7.0, cantidad de calificaciones 1
+Legajo: 102, Nombre: santiago, Promedio: 0.0, cantidad de calificaciones 0
+Legajo: 104, Nombre: mariana, Promedio: 0.0, cantidad de calificaciones 0
+Ingrese el nro de legajo a ingresar nota:1000
+No se encontró un estudiante con el legajo 1000. Intente nuevamente.
+Ingrese el nro de legajo a ingresar nota:101
+Ingrese la nota obtenida, debe estar entre 0 y 10 : 7
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 2
+Lista de estudiantes:
+Legajo: 100, Nombre: agustin, Promedio: 10.0, cantidad de calificaciones 1
+Legajo: 101, Nombre: esteban, Promedio: 7.0, cantidad de calificaciones 2
+Legajo: 102, Nombre: santiago, Promedio: 0.0, cantidad de calificaciones 0
+Legajo: 104, Nombre: mariana, Promedio: 0.0, cantidad de calificaciones 0
+Ingrese el nro de legajo a ingresar nota:100
+Ingrese la nota obtenida, debe estar entre 0 y 10 : 6
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 2
+Lista de estudiantes:
+Legajo: 100, Nombre: agustin, Promedio: 8.0, cantidad de calificaciones 2
+Legajo: 101, Nombre: esteban, Promedio: 7.0, cantidad de calificaciones 2
+Legajo: 102, Nombre: santiago, Promedio: 0.0, cantidad de calificaciones 0
+Legajo: 104, Nombre: mariana, Promedio: 0.0, cantidad de calificaciones 0
+Ingrese el nro de legajo a ingresar nota:104
+Ingrese la nota obtenida, debe estar entre 0 y 10 : 9
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 6
+Cantidad de estudiantes: 4
+Promedio general de todos los estudiantes: 6.0
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 5
+Legajo: 104, Nombre: mariana, Promedio: 9.0, cantidad de calificaciones 1
+Legajo: 100, Nombre: agustin, Promedio: 8.0, cantidad de calificaciones 2
+Legajo: 101, Nombre: esteban, Promedio: 7.0, cantidad de calificaciones 2
+Legajo: 102, Nombre: santiago, Promedio: 0.0, cantidad de calificaciones 0
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 6
+Cantidad de estudiantes: 4
+Promedio general de todos los estudiantes: 6.0
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 3
+Lista de estudiantes:
+Legajo: 104, Nombre: mariana, Promedio: 9.0, cantidad de calificaciones 1
+Legajo: 100, Nombre: agustin, Promedio: 8.0, cantidad de calificaciones 2
+Legajo: 101, Nombre: esteban, Promedio: 7.0, cantidad de calificaciones 2
+Legajo: 102, Nombre: santiago, Promedio: 0.0, cantidad de calificaciones 0
+Ingrese el nro de legajo a agregar a la cola de consultas:101
+Estudiante esteban agregado a la cola de consultas.
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 3
+Lista de estudiantes:
+Legajo: 104, Nombre: mariana, Promedio: 9.0, cantidad de calificaciones 1
+Legajo: 100, Nombre: agustin, Promedio: 8.0, cantidad de calificaciones 2
+Legajo: 101, Nombre: esteban, Promedio: 7.0, cantidad de calificaciones 2
+Legajo: 102, Nombre: santiago, Promedio: 0.0, cantidad de calificaciones 0
+Ingrese el nro de legajo a agregar a la cola de consultas:100
+Estudiante agustin agregado a la cola de consultas.
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 3
+Lista de estudiantes:
+Legajo: 104, Nombre: mariana, Promedio: 9.0, cantidad de calificaciones 1
+Legajo: 100, Nombre: agustin, Promedio: 8.0, cantidad de calificaciones 2
+Legajo: 101, Nombre: esteban, Promedio: 7.0, cantidad de calificaciones 2
+Legajo: 102, Nombre: santiago, Promedio: 0.0, cantidad de calificaciones 0
+Ingrese el nro de legajo a agregar a la cola de consultas:10555
+No se encontró un estudiante con el legajo 10555. Intente nuevamente.
+Ingrese el nro de legajo a agregar a la cola de consultas:104
+Estudiante mariana agregado a la cola de consultas.
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 1
+Ingrese el nombre del estudiante: marcelo
+Ingrese el legajo del estudiante: 500
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 4
+Atendiendo consulta del estudiante: esteban (Legajo: 101)
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 4
+Atendiendo consulta del estudiante: agustin (Legajo: 100)
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 4
+Atendiendo consulta del estudiante: mariana (Legajo: 104)
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 4
+No hay estudiantes en la cola de consultas.
+
+--- MENU ---
+1. Agregar estudiante
+2. Agregar calificación a estudiante
+3. Agregar estudiante cola de consultas
+4. Atender siguiente consulta
+5. ver estudiantes y sus promedios
+6. Ver estadisticas en general.
+7. Salir
+Seleccione una opción: 7
+Saliendo del programa...

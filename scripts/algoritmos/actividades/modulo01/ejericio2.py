@@ -5,9 +5,9 @@ def celsius_a_fahrenheit(celsius):
     """Convierte temperatura de Celsius a Fahrenheit""" 
     return (celsius * 9/5) + 32 
 
-def calcular_estadisticas(lista_temperaturas):
-    promedio = sum(lista_temperaturas) / len(lista_temperaturas)
-    desviacion = statistics.stdev(datos_celsius) 
+def calcular_estadisticas(datos):
+    promedio = sum(datos) / len(datos)
+    desviacion = statistics.stdev(datos) 
     return promedio, desviacion
 
 # Código principal 

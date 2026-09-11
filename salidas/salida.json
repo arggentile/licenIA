@@ -1,0 +1,12 @@
+[
+    {
+        "edad": 22,
+        "ingresos": 35000,
+        "etiqueta": 0
+    },
+    {
+        "edad": 45,
+        "ingresos": 82000,
+        "etiqueta": 1
+    }
+]

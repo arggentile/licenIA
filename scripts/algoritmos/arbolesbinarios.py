@@ -56,7 +56,7 @@ class ArbolBinario:
 
     def _minimo_valor(self, nodo):
         actual = nodo
-        while actual.izquierdo is Node is not None:
+        while actual.izquierdo is nodo is not None:
             actual = actual.izquierdo
         return actual.valor
 
