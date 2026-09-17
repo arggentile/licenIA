@@ -1,4 +1,5 @@
 from collections import deque
+
 class Pila:
     """Pila LIFO (Last In, First Out) implementada con deque."""
 
