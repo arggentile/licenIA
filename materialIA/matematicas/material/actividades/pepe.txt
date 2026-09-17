@@ -1,0 +1,315 @@
+Derivadas, gradientes y función de pérdida
+1. La función de pérdida: ¿qué estamos midiendo?
+
+Cuando entrenamos un modelo (una red neuronal, una regresión, etc.), necesitamos una forma de medir qué tan mal lo está haciendo. Esa medida es la función de pérdida (loss function), habitualmente denotada como
+𝐿
+(
+𝜃
+)
+L(θ), donde
+𝜃
+θ representa los parámetros del modelo (pesos y sesgos).
+
+Si
+𝐿
+(
+𝜃
+)
+L(θ) es grande → el modelo predice mal.
+Si
+𝐿
+(
+𝜃
+)
+L(θ) es chica → el modelo predice bien.
+
+El objetivo del entrenamiento es entonces minimizar
+𝐿
+(
+𝜃
+)
+L(θ) ajustando los parámetros
+𝜃
+θ.
+
+Ejemplos comunes:
+
+Error cuadrático medio (MSE) para regresión:
+𝐿
+=
+1
+𝑛
+∑
+(
+𝑦
+𝑖
+−
+𝑦
+^
+𝑖
+)
+2
+L=
+n
+1
+	​
+
+∑(y
+i
+	​
+
+−
+y
+^
+	​
+
+i
+	​
+
+)
+2
+Entropía cruzada para clasificación.
+2. La derivada: pendiente y dirección
+
+Para una función de una sola variable
+𝐿
+(
+𝜃
+)
+L(θ), la derivada
+𝑑
+𝐿
+𝑑
+𝜃
+dθ
+dL
+	​
+
+ te dice cómo cambia la pérdida cuando cambiás un poquito
+𝜃
+θ:
+
+Si
+𝑑
+𝐿
+𝑑
+𝜃
+>
+0
+dθ
+dL
+	​
+
+>0 → al aumentar
+𝜃
+θ, la pérdida sube. Entonces conviene disminuir
+𝜃
+θ.
+Si
+𝑑
+𝐿
+𝑑
+𝜃
+<
+0
+dθ
+dL
+	​
+
+<0 → al aumentar
+𝜃
+θ, la pérdida baja. Entonces conviene aumentar
+𝜃
+θ.
+Si
+𝑑
+𝐿
+𝑑
+𝜃
+=
+0
+dθ
+dL
+	​
+
+=0 → estás en un mínimo, máximo o punto de silla (no hay dirección obvia de mejora local).
+
+La clave conceptual: la derivada apunta en la dirección de mayor crecimiento de la función. Por eso, para minimizar, nos movemos en la dirección opuesta al signo de la derivada.
+
+3. El gradiente: la derivada en muchas dimensiones
+
+Un modelo real no tiene un solo parámetro, tiene miles o millones. La generalización de la derivada a varias variables es el gradiente:
+
+∇
+𝐿
+(
+𝜃
+)
+=
+(
+∂
+𝐿
+∂
+𝜃
+1
+,
+∂
+𝐿
+∂
+𝜃
+2
+,
+…
+,
+∂
+𝐿
+∂
+𝜃
+𝑛
+)
+∇L(θ)=(
+∂θ
+1
+	​
+
+∂L
+	​
+
+,
+∂θ
+2
+	​
+
+∂L
+	​
+
+,…,
+∂θ
+n
+	​
+
+∂L
+	​
+
+)
+
+Cada componente es una derivada parcial: mide cuánto cambia
+𝐿
+L cuando movés solo ese parámetro, dejando los demás fijos.
+
+Propiedades importantes del gradiente:
+
+Es un vector en el espacio de parámetros.
+Apunta en la dirección de máximo crecimiento de
+𝐿
+L.
+Su magnitud
+∥
+∇
+𝐿
+∥
+∥∇L∥ indica cuán empinada es la superficie de pérdida en ese punto.
+4. El vínculo: dirección de ajuste del modelo
+
+Acá está el corazón de la pregunta. Como el gradiente apunta hacia donde
+𝐿
+L crece más rápido, para minimizar la pérdida nos movemos en la dirección opuesta:
+−
+∇
+𝐿
+(
+𝜃
+)
+−∇L(θ).
+
+Esto se formaliza en la regla del descenso por gradiente (gradient descent):
+
+𝜃
+nuevo
+=
+𝜃
+viejo
+−
+𝜂
+⋅
+∇
+𝐿
+(
+𝜃
+viejo
+)
+θ
+nuevo
+	​
+
+=θ
+viejo
+	​
+
+−η⋅∇L(θ
+viejo
+	​
+
+)
+
+Donde:
+
+𝜂
+η (eta) es la tasa de aprendizaje (learning rate): un escalar chico que controla cuán grande es el paso.
+El signo menos es lo que convierte el algoritmo en un descenso (si fuera más, iríamos hacia el máximo).
+Analogía intuitiva
+
+Imaginate que estás en una montaña con niebla y querés bajar al valle. No ves lejos, pero podés sentir con los pies la pendiente bajo vos:
+
+La derivada/gradiente es esa sensación de inclinación.
+El signo te dice para qué lado bajar.
+La magnitud te dice qué tan empinado está.
+La tasa de aprendizaje es cuán largo es cada paso que das.
+
+Si das pasos en la dirección opuesta al gradiente, iterativamente vas descendiendo hacia el valle (un mínimo de la pérdida).
+
+5. Resumen del vínculo
+Concepto	Rol en el entrenamiento
+Función de pérdida
+𝐿
+(
+𝜃
+)
+L(θ)	Mide el error del modelo
+Derivada / gradiente
+∇
+𝐿
+∇L	Indica dirección y magnitud del mayor crecimiento del error
+
+−
+∇
+𝐿
+−∇L	Indica la dirección de ajuste que reduce el error
+Learning rate
+𝜂
+η	Escala el tamaño del ajuste
+Regla de actualización
+𝜃
+←
+𝜃
+−
+𝜂
+∇
+𝐿
+(
+𝜃
+)
+θ←θ−η∇L(θ)
+6. Sutilezas importantes
+Mínimos locales y puntos de silla: el gradiente solo da información local. Puede llevarte a un mínimo que no es el global.
+Learning rate mal elegido: si
+𝜂
+η es muy grande, el algoritmo oscila o diverge; si es muy chico, el entrenamiento es lentísimo.
+Gradiente cero ≠ solución óptima: puede ser un punto de silla, muy común en redes neuronales profundas.
+Diferenciabilidad: todo esto asume que
+𝐿
+L es diferenciable respecto a
+𝜃
+θ. Por eso se usan funciones de activación suaves (ReLU, sigmoide, tanh) en lugar de umbrales duros.
+
+En síntesis: la derivada/gradiente es la brújula del entrenamiento. Nos dice, en cada punto del espacio de parámetros, hacia dónde mover el modelo para que su error disminuya. Sin esa señal, ajustar millones de parámetros a mano sería imposible.
