@@ -3,3 +3,8 @@ openpyxl
 numpy
 matplotlib
 PyQt6
+pillow
+scikit-learn
+tensorflow
+torch 
+torchvision
