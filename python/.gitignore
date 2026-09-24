@@ -1,0 +1,77 @@
+#-------------------------------------------------------------------
+# Python byte-code and interpreter artefacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+#-------------------------------------------------------------------
+# Virtual-environment directories
+.venv/
+venv/
+ENV*/
+env*/
+*venv.bak*/
+
+#-------------------------------------------------------------------
+# Packaging / distribution
+build/
+dist/
+downloads/
+wheels/
+*.egg-info/
+.eggs/
+*.egg
+MANIFEST
+
+#-------------------------------------------------------------------
+# Logs & coverage / test output
+*.log
+*.out
+*.tmp
+.coverage*
+.cache/
+.tox/
+.nox/
+.pytest_cache/
+.hypothesis/
+coverage.xml
+nosetests.xml
+htmlcov/
+
+#-------------------------------------------------------------------
+# Type-checker / static-analysis caches
+.mypy_cache/
+.pyre/
+.dmypy.json
+.pytype/
+
+#-------------------------------------------------------------------
+# IDE / editor folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+#-------------------------------------------------------------------
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+#-------------------------------------------------------------------
+# Docs build artefacts
+docs/_build/
+
+#-------------------------------------------------------------------
+# OS-specific cruft
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+Icon?
+#-------------------------------------------------------------------
+# Docker / container artefacts
+*.tar
+*.gz
+
