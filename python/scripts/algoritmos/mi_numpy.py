@@ -75,7 +75,7 @@ print(np.vstack([a, b]))
 print(np.hstack([a, b]))
 """
 
-
+"""
 notas = np.array([[85, 90, 78], [92, 88, 95], [78, 85, 82]])
 print("Notas originales:")
 print(notas)
@@ -88,6 +88,7 @@ print(notas_con_bonus)
 temperaturas_celsius = np.array([[20, 22, 19], [25, 28, 24], [18, 21, 20]])
 temperaturas_fahrenheit = temperaturas_celsius * 9/5 + 32
 print(temperaturas_fahrenheit)
+"""
 
 """
 ingresos = np.array([50, 65, 45, 70, 55, 80, 60, 75, 52, 68])
@@ -98,7 +99,7 @@ desviacion = np.std(ingresos)
 ingresos_normalizados = (ingresos - media) / desviacion
 print(f"Media normalizada: {np.mean(ingresos_normalizados):.10f}")
 print(f"Desviación normalizada: {np.std(ingresos_normalizados):.2f}")
-
+"""
 
 
 serie = pd.Series([10, 20, 30, 40, 50], index=['a', 'b', 'c', 'd', 'e'])
@@ -106,19 +107,16 @@ print(serie)
 print(serie['a'])
 print(serie.mean())
 
-"""
+
 
 """
 datos = { 'nombre': ['Ana', 'Carlos', 'Beatriz', 'Diego'], 'edad': [22, 25, 23, 24], 'ciudad': ['Buenos Aires', 'Córdoba', 'Rosario', 'Mendoza'] }
 df = pd.DataFrame(datos)
-"""
-"""
+print(f"\n los datos del datafreme son : \n {df}")
 
-print(df)
-
-print(df.head())
-print(f"Primeras filas {df.head(2)}")
-print(f"Ultimas filas {df.tail(1)}")
+print(f" \n Las primeras filas son: {df.    head()} \n")
+print(f" \n Primeras 2 filas {df.head(2)} \n")
+print(f" \n Ultimas filas {df.tail(2)} \n")
 print(df.info())
 print(df.describe())
 
@@ -130,3 +128,48 @@ print(df.loc[0, 'edad'])
 mayores_23 = df[df['edad'] > 23]
 print(mayores_23)
 """
+
+"""
+datos_con_faltantes = { 'nombre': ['Ana', 'Carlos', 'Beatriz', 'Diego'], 'edad': [22, np.nan, 23,
+24], 'salario': [50000, 60000, np.nan, 55000] }
+df = pd.DataFrame(datos_con_faltantes)
+print(df.isnull().sum())
+#df_limpio = df.dropna()
+#df_rellenado = df.fillna(df.mean())
+
+"""
+"""
+datos = { 'nombre': ['Ana', 'Carlos', 'Beatriz', 'Diego'], 'edad': [22, 25, 23, 24], 'ciudad': ['Buenos Aires', 'Córdoba', 'Rosario', 'Mendoza'] }
+df = pd.DataFrame(datos)
+df.to_csv('salida.csv', index=False)
+df.to_excel('salida.xlsx', index=False)
+"""
+
+"""
+datos = { 'ciudad': ['Buenos Aires', 'Córdoba', 'Buenos Aires', 'Córdoba'], 'salario': [50000,
+60000, 55000, 58000] }
+df = pd.DataFrame(datos)
+print(df.groupby('ciudad')['salario'].mean())
+print(df.groupby('ciudad')['salario'].agg(['mean', 'max', 'min']))
+"""
+
+"""
+datos_peliculas = { 'titulo': ['Matrix', 'Titanic', 'Avatar', 'Inception', 'Toy Story'], 'genero':
+['Sci-Fi', 'Drama', 'Sci-Fi', 'Sci-Fi', 'Animacion'], 'año': [1999, 1997, 2009, 2010, 1995], 
+ 'rating_imdb': [8.7, 7.9, 7.8, 8.8, 8.3], 'recaudacion_millones': [467, 2187, 2847, 829, 373] }
+df = pd.DataFrame(datos_peliculas)
+print("Estadísticas descriptivas:")
+print(df[['rating_imdb', 'recaudacion_millones']].describe())
+print("\nPelículas por género:")
+por_genero = df.groupby('genero').agg({ 'rating_imdb': 'mean', 'recaudacion_millones': 'sum' })
+print(por_genero)
+"""
+
+datos_ejemplo = { 'genero': ['pop', 'rock', 'pop', 'rock' , 'latino', 'regeton'] }
+df = pd.DataFrame(datos_ejemplo)
+genero_dummies = pd.get_dummies(df['genero'], prefix='genero')
+print(genero_dummies)
+df = pd.concat([df, genero_dummies], axis=1)
+df = df.drop('genero', axis=1)
+print("\nDataset listo para machine learning:")
+print(df)
