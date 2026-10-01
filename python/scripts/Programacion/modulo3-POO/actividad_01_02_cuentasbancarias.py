@@ -18,7 +18,7 @@ class Cuenta:
             if(cantidad_transferir<=self.saldo):
                 self.saldo -= cantidad_transferir
             else: # aca deberiamos obtener la uinstancia de la cuenta destino, no se implementa
-                print("Dindeo no dispone de la cantidad necesaria")
+                print("Dinero no dispone de la cantidad necesaria")
                 return
     
     def mostrar_info(self):

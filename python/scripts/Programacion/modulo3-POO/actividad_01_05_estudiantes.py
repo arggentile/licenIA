@@ -14,12 +14,6 @@ class MateriaNota:
         self.materia = materia
         self.nota = nota
 
-    def getMateria(self):
-        return self.materia
-    
-    def getNota(self):
-        return self.nota
-
     def registrarNota(self, nota):
         self.nota = nota
     
@@ -81,3 +75,6 @@ class Estudiante:
         print(f"Promedio general: {self.promedio_general():.2f}")
         print(f"Condición final:  {self.condicion()}")
         print("=" * 50)
+
+
+#hacer el cuerpo para el final

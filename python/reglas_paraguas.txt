@@ -1,0 +1,17 @@
+Árbol: ¿Llevar paraguas?
+¿lloviendo == True?
+    Sí -> [Llevar paraguas]
+    No ¿prob_lluvia >= 60?
+        Sí -> [Llevar paraguas]
+        No ¿prob_lluvia >= 30?
+            Sí ¿temperatura < 15?
+                Sí -> [Llevar paraguas]
+                No -> [No llevar paraguas]
+            No -> [No llevar paraguas]
+
+Reglas:
+R1: SI lloviendo == True ENTONCES Llevar paraguas
+R2: SI lloviendo != True Y prob_lluvia >= 60 ENTONCES Llevar paraguas
+R3: SI lloviendo != True Y prob_lluvia < 60 Y prob_lluvia >= 30 Y temperatura < 15 ENTONCES Llevar paraguas
+R4: SI lloviendo != True Y prob_lluvia < 60 Y prob_lluvia >= 30 Y temperatura >= 15 ENTONCES No llevar paraguas
+R5: SI lloviendo != True Y prob_lluvia < 60 Y prob_lluvia < 30 ENTONCES No llevar paraguas

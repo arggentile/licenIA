@@ -4,7 +4,9 @@ import numpy as np
 """
 lista = [1, 2, 3, 4, 5]
 array = np.array(lista)
+print("\n  ---- list como array numPY ---------")
 print(array)
+print("\n  ---- array numPY ---------")
 matriz = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 print(matriz)
 
@@ -13,29 +15,28 @@ unos = np.ones((2, 3))
 rango = np.arange(0, 10, 2)
 lineal = np.linspace(0, 1, 5)
 
-
-print(ceros)
-print(unos)
-print(rango)
-print(lineal)
-print(f"Forma del vector: {array.shape}") #dimensoin del array
-print(f"Forma de la matriz: {matriz.shape}") #dimensoin del array
+print(f"Forma del vector: {array.shape}") 
+print(f"Forma de la matriz: {matriz.shape}") 
 print(f"Dimensiones del vector: {array.ndim}")
 print(f"Total de elementos: {array.size}")
 print(f"Tipo de datos: {array.dtype}")
-"""
 
-"""
+print("\n  ---- array de ceros numPy ---------")
+print(ceros)
+print("\n  ---- array uno numPY ---------")
+print(unos)
+print("\n  ---- arange crea una lista desde inicio hasta fin cada n numeros: ---------")
+print(rango)
+print("\n  ---- array uno numPY ---------")
+print(lineal)
+
+print("\n  ---- Accediendo Slign a los elementos de una matriz y vecto por sus indices ---------")
 array = np.array([10, 20, 30, 40, 50])
 matriz = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-print(array[0])
-print(matriz[1, 2])
-print(matriz[0:2, 1:3])
 print(matriz[1, :])
 print(matriz[:, 1])
-"""
 
-"""
+print("\n  ---- Funciones matematicas ---------")
 a = np.array([1, 2, 3, 4])
 b = np.array([10, 20, 30, 40])
 print(a + b)
@@ -43,9 +44,7 @@ print(a * b)
 print(b / a)
 print(a ** 2)
 print(a + 10)
-"""
 
-"""
 datos = np.array([12, 15, 18, 22, 25, 30, 35])
 media = np.mean(datos)
 mediana = np.median(datos)
@@ -59,23 +58,20 @@ print(f"Desviación estándar: {desviacion}")
 print(f"Máximo: {maximo}")
 print(f"Mínimo: {minimo}")
 print(f"Suma: {suma}")
-"""
 
-"""
+print("\n  ---- arange  ---------")
 array = np.arange(12)
 print(f"vector es {array}")
 matriz = array.reshape(3, 4)
 print(matriz)
-"""
 
-"""
 a = np.array([1, 2, 3])
 b = np.array([4, 5, 6])
+print("\n  ---- vstack   concatena de forma vertical, ---------")
 print(np.vstack([a, b]))
+print("\n  ---- hstack concatena horizontal ---------")
 print(np.hstack([a, b]))
-"""
 
-"""
 notas = np.array([[85, 90, 78], [92, 88, 95], [78, 85, 82]])
 print("Notas originales:")
 print(notas)
@@ -88,9 +84,7 @@ print(notas_con_bonus)
 temperaturas_celsius = np.array([[20, 22, 19], [25, 28, 24], [18, 21, 20]])
 temperaturas_fahrenheit = temperaturas_celsius * 9/5 + 32
 print(temperaturas_fahrenheit)
-"""
 
-"""
 ingresos = np.array([50, 65, 45, 70, 55, 80, 60, 75, 52, 68])
 media = np.mean(ingresos)
 print(f"Media: {media}")
@@ -101,12 +95,13 @@ print(f"Media normalizada: {np.mean(ingresos_normalizados):.10f}")
 print(f"Desviación normalizada: {np.std(ingresos_normalizados):.2f}")
 """
 
-
+""" ---------------------------- """
+"""
 serie = pd.Series([10, 20, 30, 40, 50], index=['a', 'b', 'c', 'd', 'e'])
 print(serie)
 print(serie['a'])
 print(serie.mean())
-
+"""
 
 
 """
@@ -165,11 +160,16 @@ por_genero = df.groupby('genero').agg({ 'rating_imdb': 'mean', 'recaudacion_mill
 print(por_genero)
 """
 
+
 datos_ejemplo = { 'genero': ['pop', 'rock', 'pop', 'rock' , 'latino', 'regeton'] }
 df = pd.DataFrame(datos_ejemplo)
+
 genero_dummies = pd.get_dummies(df['genero'], prefix='genero')
 print(genero_dummies)
+print(df)
+"""
 df = pd.concat([df, genero_dummies], axis=1)
 df = df.drop('genero', axis=1)
 print("\nDataset listo para machine learning:")
 print(df)
+"""
