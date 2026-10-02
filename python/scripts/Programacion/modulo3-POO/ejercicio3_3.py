@@ -1,3 +1,32 @@
+""" Escribí el programa del árbol de decisión en Python y lo ejecuté: clasifica correctamente 8 de los 10 casos de prueba (80 % de precisión).
+
+Cómo está armado (con clases):
+
+Condicion: la pregunta de cada nodo interno: un atributo, un operador (==, >=, <, etc.) y un valor.
+Nodo: la clase base. De ella salen dos tipos de nodo:
+NodoDecision: un nodo interno con una condición y dos ramas, una para "sí" y otra para "no".
+NodoHoja: el final de un camino, que guarda la clasificación.
+ArbolDecision: reúne todo y cubre cada parte del enunciado:
+Construir el árbol: con decision() y hoja() se arma el árbol anidando nodos.
+Predecir: predecir() da la clasificación, y explicar() muestra además el camino que siguió (por ejemplo: ¿lloviendo? No → ¿prob_lluvia ≥ 60? Sí → Llevar paraguas).
+Evaluar: evaluar() compara las predicciones con los resultados esperados y devuelve la precisión, una tabla de aciertos y errores por clase (matriz de confusión) y la lista de errores.
+Exportar las reglas: exportar_texto() muestra el árbol con sangrías y exportar_reglas() lo convierte en reglas del tipo "SI … ENTONCES …". guardar_reglas() las escribe en un archivo de texto.
+
+El árbol del ejemplo:
+
+Si está lloviendo, lleva paraguas.
+Si no llueve pero la probabilidad de lluvia es de 60 % o más, también lo lleva.
+Si la probabilidad está entre 30 % y 60 %, lo lleva solo si hacen menos de 15 °C.
+En cualquier otro caso, no lo lleva.
+
+De los 10 casos de prueba, puse a propósito 2 que el árbol clasifica mal, para que la evaluación muestre errores y no salga siempre 100 %. Para usarlo con otro problema solo hay que cambiar la función construir_arbol_paraguas().
+
+Archivos:
+
+arbol_decision.py
+reglas_paraguas.txt (se crea al ejecutar el programa, en la carpeta desde donde se lo corre)
+"""
+
 from abc import ABC, abstractmethod
 import operator
 
