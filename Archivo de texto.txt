@@ -1,0 +1,81 @@
+//clasificasdores comunes
+
+Abfracción dentaria
+Abrasión de encía o mucosa oral
+Abrasión dentaria
+Atrición Dentaria
+Concusión dentaria
+Contusión de encía
+Diente Rosado
+Erosión dentaria
+Exarticulación o Avulsión
+Fractura conminuta Cavidad alveolar
+Fractura de corona c/exposición pulpar
+Fractura de corona s/exposición pulpar
+Fractura de corona y raíz
+Fractura de mandibula o maxilar
+Fractura del proceso alveolar
+Fractura esmalte
+Fractura esmalte y dentina c/exposición pulpar
+Fractura esmalte y dentina s/exposición pulpar
+Fractura pared alveolar V. P/L.
+Infecciones bacterianas
+Infecciones fúngicas
+Infecciones virales
+Laceración de encía
+Luxación intrusiva
+Luxación Lateral
+Subluxación dentaria
+
+//examen cadaverico
+Aut. en demanda por responsabilidad profesional
+Aut. Natural
+Datación de edad
+Exhumaciones/genética
+Identificación
+Aut./cuerpo recuperado del fuego
+Aut./Cuerpo recuperado del agua
+Aut./asfixias mecánicas
+Aut./otras circunstancias
+
+/*/Examen documental exclusivo
+
+Datación de Edad
+Estado de salud/prisión domiciliaria, familiar
+Estado de salud/prisión domiciliaria, reo
+Lesiones/apremios
+Lesiones/maltrato infantil
+Lesiones/otras circunstancias
+Lesiones/responsabilidad profesional
+Lesiones/riña
+Lesiones/v. de género
+Otros (ej. amparo)
+
+//examen sifico
+
+Abuso sexual infantil
+Datación de edad
+Estado de salud - Ejecución Penal
+Lesiones/apremios
+Lesiones/riña
+Lesiones/v. de género
+Morfología: mordedura animal
+Morfología: mordedura humana
+Morfología: politraumatismo
+Otros exámenes físicos (ej. amparo)
+
+//toma de muetras
+
+Genética/dientes en filiación
+Génetica/dientes en filiación
+Genética/dientes para ADN
+Genética/hisopados en filiación
+Génetica/hisopados en filiación
+Genética/hisopados en imputado
+Génetica/hisopados en imputado
+Genética/hisopados en víctima presunta
+Génetica/hisopados en víctimas presunta
+Impresiones Dentarias maxilares
+Modelos de estudio Muestras cadavéricas
+
+
