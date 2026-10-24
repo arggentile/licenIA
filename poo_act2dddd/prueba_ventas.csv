@@ -1,0 +1,6 @@
+codigo_venta,codigo_producto,cantidad,precio_unitario,fecha_venta
+<bound method Venta.get_codigo_venta of <venta.Venta object at 0x74277b3dbe30>>,10,50,1500.0,10-05-2026
+<bound method Venta.get_codigo_venta of <venta.Venta object at 0x742778f82510>>,11,25,2210.55,10-06-2026
+<bound method Venta.get_codigo_venta of <venta.Venta object at 0x74277b46fcb0>>,10,25,7500.25,05-05-2026
+<bound method Venta.get_codigo_venta of <venta.Venta object at 0x742779087590>>,12,15,1350.33,12-05-2026
+<bound method Venta.get_codigo_venta of <venta.Venta object at 0x74277a934bf0>>,12,15,3650.22,07-06-2026

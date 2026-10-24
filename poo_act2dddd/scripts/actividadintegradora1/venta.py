@@ -11,14 +11,15 @@ class Venta:
         _precio_unitario (float): Precio al que se vendió cada unidad.
         _fecha (datetime): Fecha en la que ocurrió la venta.
     """
-    def __init__(self, id_venta, codigo_producto, cantidad, precio_unitario, fecha_venta):
+    def __init__(self, codigo_venta, codigo_producto, cantidad, precio_unitario, valor_unitario, fecha_venta):
         self._validar_datos_iniciales(cantidad, precio_unitario, fecha_venta)
 
        
-        self._id_venta = id_venta
+        self._codigo_venta = codigo_venta
         self._codigo_producto = codigo_producto
         self._cantidad = cantidad
         self._precio_unitario = float(precio_unitario)
+        self._valor_unitario = float(valor_unitario)
         self._fecha_venta = fecha_venta
 
     @staticmethod
@@ -45,8 +46,8 @@ class Venta:
     def get_codigo_producto(self):
         return self._codigo_producto
 
-    def get_id_venta(self):
-            return self._id_venta
+    def get_codigo_venta(self):
+            return self.get_codigo_venta
 
     def get_cantidad_vendida(self):
         return self._cantidad
@@ -57,27 +58,22 @@ class Venta:
     def get_fecha_venta(self):
         return self._fecha_venta
 
+    def get_valor_unitario(self):
+            return self._valor_unitario
+    
+
     def valor_total_venta(self):
         """Devuelve el total facturado por esta venta."""
         return self._cantidad * self._precio_unitario
 
     def __str__(self):
-        return (f"Id Venta: {self._id_venta:.5f} | "
+        return (f"Id Venta: {self._codigo_venta:.5f} | "
                 f"Fecha{self._fecha_venta} | "
                 f"Prod: {self._codigo_producto} | "
                 f"Cant: {self._cantidad} | "
                 f"P.Unit: ${self._precio_unitario:.2f} | "
-                f"Total: ${self.valor_total_venta():.2f}")
-
-    def to_dict(self):
-        """Serializa la venta a diccionario."""
-        return {
-            "codigo_producto": self._codigo_producto,
-            "cantidad": self._cantidad,
-            "precio_unitario": self._precio_unitario,
-            "fecha": self._fecha_venta,
-            "total": self.valor_total_venta(),
-        }
+                f"Valor.Unit: ${self._valor_unitario:.2f} | "
+                f"Total: ${self.valor_total_venta():.2f}")  
  
 if __name__ == '__main__':
     """
@@ -91,11 +87,11 @@ if __name__ == '__main__':
 
     try:
         ventas = []
-        ventas.append( Venta(10000,101, 50, 1500.00, '10-05-2026'))
-        ventas.append( Venta(10001, 102, 25, 2210.55, '10-06-2026'))
-        ventas.append( Venta(10002, 103, 25, 7500.25, '05-05-2026'))
-        ventas.append( Venta(10003, 101, 15, 1350.33, '12-05-2026'))
-        ventas.append( Venta(10004, 101, 15, 3650.22, '07-06-2026'))
+        ventas.append( Venta(10000, 101, 50, 1500.00, 1000.00,'10-05-2026'))
+        ventas.append( Venta(10001, 102, 25, 2210.55, 1800.00,'10-06-2026'))
+        ventas.append( Venta(10002, 103, 25, 7500.25, 500.25,'05-05-2026'))
+        ventas.append( Venta(10003, 101, 15, 1350.33, 1100.00,'12-05-2026'))
+        ventas.append( Venta(10004, 101, 15, 3650.22, 3000,'07-06-2026'))
         for i, elem in enumerate(ventas):
             print(f" { elem.__str__() }")
     except ValueError:
