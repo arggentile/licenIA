@@ -14,7 +14,9 @@ class Predicciones:
         _modelos (dict): {codigo_producto: (modelo, scaler, metricas)}.
     """
 
-    # ------------------- Entrenamiento ------------------- #
+    def __init__(self):
+        self._modelos = {}
+
     def entrenar_modelo_producto(self, codigo_producto, df_ventas):
         """
         Entrena un modelo de regresión lineal para un producto puntual.
@@ -25,16 +27,17 @@ class Predicciones:
 
         #trabajamos con una copia del dataframe
         datos = df_ventas[df_ventas["codigo_producto"] == codigo_producto].copy()
-
+        # convertir fecha a datetime, ya que procido error
+        datos["fecha_venta"] = pd.to_datetime(datos["fecha_venta"], format="%d-%m-%Y")
      
         # Agrupamos ventas por fecha para obtener la demanda diaria
-        datos = (datos.groupby("fecha")
+        datos = (datos.groupby("fecha_venta")
                        .agg(cantidad=("cantidad", "sum"))
                        .reset_index()
-                       .sort_values("fecha"))
+                       .sort_values("fecha_venta"))
 
-        fecha_base = datos["fecha"].min()
-        datos["dia"] = (datos["fecha"] - fecha_base).dt.days
+        fecha_base = datos["fecha_venta"].min()
+        datos["dia"] = (datos["fecha_venta"] - fecha_base).dt.days
 
         X = datos[["dia"]].values
         y = datos["cantidad"].values
@@ -73,13 +76,14 @@ class Predicciones:
             "exito": True,
             "metricas": metricas,
         }
+       
 
     def predecir_ventas_futuras(self, codigo_producto, dias_adelante=7):
         """
         Predice la cantidad de ventas diarias para los próximos `dias_adelante`
         días a partir del último registro de entrenamiento.
         """
-        codigo_producto = codigo_producto.strip().upper()
+        codigo_producto = int(codigo_producto)
         if codigo_producto not in self._modelos:
             return None
 
@@ -98,4 +102,11 @@ class Predicciones:
 
     def productos_entrenados(self):
         return list(self._modelos.keys())
+    
+    def obtener_metricas(self, codigo_producto):
+        """Devuelve las métricas del modelo entrenado para un producto."""
+        codigo_producto = codigo_producto.strip().upper()
+        if codigo_producto not in self._modelos:
+            return None
+        return self._modelos[codigo_producto][2]
     

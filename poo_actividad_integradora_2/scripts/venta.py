@@ -25,7 +25,7 @@ class Venta:
 
     def _validar_datos_iniciales(self, cantidad, precio_unitario, fecha_venta):
         """ Realiza una validacion de algunos datos iniciales"""
-        if not isinstance(cantidad, int):
+        if not isinstance(cantidad, int) or cantidad <= 0:
             raise ValueError("La cantidad debe ser positiva.")
         
         if not isinstance(precio_unitario, (int, float)):

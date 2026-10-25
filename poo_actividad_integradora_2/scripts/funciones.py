@@ -101,7 +101,7 @@ def analizar_datos_historicos(mi_inventario):
 
 
 
-def entrenar_modelos(mi_inventario, predicciones):
+def entrenar_modelos(mi_inventario, mi_predicciones):
     """ Entrena modelos basados en la ventas historicas """
     df_ventas = mi_inventario.get_ventas_df_frame()
     if df_ventas.empty:
@@ -110,9 +110,10 @@ def entrenar_modelos(mi_inventario, predicciones):
 
     """Entrena un modelo por cada producto que haya tenido ventas."""
     resultados_entrenamiento = []
-    codigos = df_ventas["codigo_producto"]
+    #codigos = df_ventas["codigo_producto"] # se agrega el unique solo entra una vez el codigo
+    codigos = df_ventas["codigo_producto"].unique()
     for codigo in codigos:
-        resultado_x_producto = mi_inventario.entrenar_modelo_producto(codigo, df_ventas)
+        resultado_x_producto = mi_predicciones.entrenar_modelo_producto(codigo, df_ventas)
         resultados_entrenamiento.append(resultado_x_producto)
 
     return resultados_entrenamiento
@@ -128,77 +129,75 @@ def entrenar_modelos(mi_inventario, predicciones):
     """
     
 
-def predecir_ventas(mi_inventario, predicciones):
+def predecir_ventas(predicciones):
     
     entrenados = predicciones.productos_entrenados()
     if not entrenados:
         print(" Se se puede calcular las predicciones ya que no se han entrebado los modelos para predecir ventas futuras.")
         return None
 
-    codigo_prod_predecir = pedir_texto("Código del producto a predecir: ")
+    codigo_prod_predecir = pedir_numero("Código del producto a predecir: ", int, 1000)
     if codigo_prod_predecir not in entrenados:
         print(" Codigo inexistente o no hay registros de entrenamiento disponibles.")
         return
 
     dias = pedir_numero("¿Cuántos días a predecir?: ", int, 1)
-    prediccion_x_producto = predicciones.predecir(codigo_prod_predecir, dias)
-    total = self._predictor.predecir_total(codigo, dias)
+    prediccion_del_producto = predicciones.predecir_ventas_futuras(codigo_prod_predecir, dias)
+    if (prediccion_del_producto is None):
+        print(" Error. No se pudo predecir")
+        return            
 
-    print(f"\nPredicciones día a día (unidades):")
-    for i, p in enumerate(predicciones, start=1):
+    print(f"\n Predicciones día x día:")
+    for i, p in enumerate(prediccion_del_producto, start=1):
         print(f"  Día +{i}: {p:.2f} unidades")
-    print(f"\nTotal estimado en {dias} días: {total:.2f} unidades")
+    #print(f"\nTotal estimado en {dias} días: {total:.2f} unidades")
 
-"""
-    def opcion_stock_y_ganancias(self):
-        print("\n--- Stock recomendado y ganancias estimadas ---")
-        entrenados = self._predictor.productos_entrenados()
-        if not entrenados:
-            print(" No hay modelos entrenados. Elija primero la opción 4.")
-            return
 
-        dias = self._pedir_numero(
-            "Horizonte de planificación (días): ", int, 1
-        )
-        factor_seguridad = self._pedir_numero(
-            "Factor de seguridad (ej. 1.2 = 20% extra): ", float, 1.0
-        )
+def opcion_stock_y_ganancias(mi_inventario, mi_predicciones):
+    """ Calcula el stock recomendado y ganancia estimada para cada producto del modelo entrenado, en un periodo estimado de 30 dias futuros."""
+    print("\n--- Stock recomendado y ganancias estimadas ---")
 
-        print(f"\n{'Código':<10}{'Nombre':<22}{'Dem.Esp':>10}"
-              f"{'StockRec':>10}{'StockAct':>10}{'ReponerU':>10}{'Ganancia$':>12}")
-        print("-" * 84)
+    modelos_entrenados = mi_predicciones.productos_entrenados()
+    if not modelos_entrenados:
+        print(" No hay modelos entrenados. Primero entrene los modelos (opción 4).")
+        return
 
-        for codigo in entrenados:
-            producto = self._inventario.obtener_producto(codigo)
-            if producto is None:
-                continue
-            demanda = self._predictor.predecir_total(codigo, dias)
-            stock_recomendado = int(demanda * factor_seguridad) + 1
-            reponer = max(stock_recomendado - producto.stock_actual, 0)
-            ganancia_estimada = demanda * producto.ganancia_unitaria()
+    # Encabezado de la tabla
+    print(f"\n{'Código':<10}{'Nombre':<22} {'Demanda.Esperada':>10} {'StockRec':>10} {'Ganancia$':>14}")
+    print("-" * 86)
+    dias_futuros = 30
+    for codigo in modelos_entrenados:
+        producto = mi_inventario.obtener_producto(codigo)
+        if producto is None: #chequemos que exita el producto, a los fones de imprimir los datos del mismos
+            continue
 
-            print(f"{producto.codigo:<10}{producto.nombre[:20]:<22}"
-                  f"{demanda:>10.2f}{stock_recomendado:>10d}"
-                  f"{producto.stock_actual:>10d}{reponer:>10d}"
-                  f"{ganancia_estimada:>12.2f}")
+        prediccion_del_producto = mi_predicciones.predecir_ventas_futuras(codigo,  dias_futuros)
+        if prediccion_del_producto is None:
+            continue
 
-    def opcion_ver_metricas(self):
-        print("\n--- Métricas de modelos entrenados ---")
-        entrenados = self._predictor.productos_entrenados()
-        if not entrenados:
-            print(" No hay modelos entrenados.")
-            return
-        for codigo in entrenados:
-            m = self._predictor.obtener_metricas(codigo)
-            r2 = f"{m['r2']:.3f}" if m["r2"] is not None else "N/D"
-            print(f"\nProducto {codigo}")
-            print(f"  MAE                 : {m['mae']:.3f}")
-            print(f"  RMSE                : {m['rmse']:.3f}")
-            print(f"  R²                  : {r2}")
-            print(f"  Coeficiente         : {m['coeficiente']:.3f}")
-            print(f"  Intercepto          : {m['intercepto']:.3f}")
-            print(f"  Muestras train/test : "
-                  f"{m['muestras_entrenamiento']}/{m['muestras_prueba']}")
+        demanda_estimada  = float(sum(prediccion_del_producto))       # unidades que se venderán       
+        ganancia_estimada = demanda_estimada * producto.ganancia_unitaria() # ganancias  que se obtendria de la demanda estimad
+
+        print(f"{producto.get_codigo_producto():<10}"
+              f"{producto.nombre[:20]:<22}"
+              f"{demanda_estimada:>10.2f}"            
+              f"{ganancia_estimada:>14.2f}")
+
+def opcion_ver_metricas(mi_predicciones):
+    print("\n--- Métricas de modelos entrenados ---")
+    modelos_entrenados = mi_predicciones.productos_entrenados()
+    if not modelos_entrenados:
+        print(" No hay modelos entrenados.")
+        return
+    for codigo in modelos_entrenados:
+        m = mi_predicciones.obtener_metricas(codigo)
+        r2 = f"{m['r2']:.3f}" if m["r2"] is not None else "N/D"
+        print(f"\nProducto {codigo}")
+        print(f"  MAE                 : {m['mae']:.3f}")
+        print(f"  RMSE                : {m['rmse']:.3f}")
+        print(f"  R²                  : {r2}")
+        print(f"  Coeficiente         : {m['coeficiente']:.3f}")
+        print(f"  Intercepto          : {m['intercepto']:.3f}")
+        print(f"  Muestras train/test :  {m['muestras_entrenamiento']}/{m['muestras_prueba']}")
 
     
-"""
