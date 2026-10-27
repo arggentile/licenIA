@@ -1,0 +1,90 @@
+============================================================
+ Ingrese una opción valida
+============================================================
+ 1. Registrar nuevo producto
+ 2. Registrar venta
+ 3. Analizar datos históricos (Pandas)
+ 4. Entrenar modelos de machine learning
+ 5. Predecir ventas futuras
+ 6. Stock recomendado y ganancias estimadas
+ 7. Ver métricas de modelos entrenados
+ 8. Listar productos del catálogo
+ 9. Listar Ventas historicas
+ S. Salir
+============================================================
+Opción: 2
+
+--- Ingrese los datos para registrar venta ---
+
+=====================================================================================
+Listado de productos
+=====================================================================================
+ codigo_producto                     nombre  categoria  precio_venta  costo_unitario  stock_actual
+             100             Detergente Ala   LIMPIEZA      12923.15         9771.69           613
+             101     Lavavajillas Magistral   LIMPIEZA       5774.94         4050.93           259
+             102        Jabon en Polvo Skip   LIMPIEZA      21686.03        10312.14           228
+             103           Lavandina Ayudin   LIMPIEZA      12040.00         9062.14           241
+             104    Desodorante de Ambiente   LIMPIEZA       6440.63         3670.25           104
+             105            Yerba Playadito    ALMACEN      16795.98         8638.05          1486
+             106            Yerba Rosamonte    ALMACEN      12589.00         8401.65          1256
+             107           Fideos Matarazzo    ALMACEN       9440.99         4533.77          1604
+             108                Arroz Gallo    ALMACEN      23495.45        12184.38           746
+             109              Aceite Natura    ALMACEN       6765.53         4529.13          1613
+             110             Azucar Ledesma    ALMACEN       7443.93         5380.62           248
+             111          Harina Blancaflor    ALMACEN       9182.86         5705.20           591
+             112              Shampoo Sedal PERFUMERIA      23879.03        12203.36          1148
+             113     Acondicionador Pantene PERFUMERIA       4920.41         2309.98           211
+             114      Jabon de Tocador Dove PERFUMERIA      17404.34         8504.59          1316
+             115       Pasta Dental Colgate PERFUMERIA      21682.25        13339.05           443
+             116    Gaseosa Coca Cola 2.25L    BEBIDAS      14373.14        10716.29           516
+             117 Agua Mineral Villavicencio    BEBIDAS      25605.13        11709.49          1801
+             118         Cerveza Quilmes 1L    BEBIDAS       5390.40         3875.47           619
+             119            Vino Tinto Toro    BEBIDAS      14507.57         7074.45           383
+             120           Galletitas Opera    ALMACEN       1500.00         1000.00           900
+-------------------------------------------------------------------------------------
+
+Código del producto vendido: 100
+Cantidad vendida: 10
+Ingrese el precio de venta del producto: valor de referencia es 12923.15: 1200
+
+ Venta registrada con éxito
+
+============================================================
+ Ingrese una opción valida
+============================================================
+ 1. Registrar nuevo producto
+ 2. Registrar venta
+ 3. Analizar datos históricos (Pandas)
+ 4. Entrenar modelos de machine learning
+ 5. Predecir ventas futuras
+ 6. Stock recomendado y ganancias estimadas
+ 7. Ver métricas de modelos entrenados
+ 8. Listar productos del catálogo
+ 9. Listar Ventas historicas
+ S. Salir
+============================================================
+Opción: 9
+
+=====================================================================================
+Listado de Ventas
+=====================================================================================
+ codigo_venta  codigo_producto  cantidad  precio_unitario  costo_unitario fecha_venta
+            1              120       100           1500.0         1000.00  26-10-2026
+            2              100        10           1200.0         9771.69  26-10-2026
+-------------------------------------------------------------------------------------
+
+============================================================
+ Ingrese una opción valida
+============================================================
+ 1. Registrar nuevo producto
+ 2. Registrar venta
+ 3. Analizar datos históricos (Pandas)
+ 4. Entrenar modelos de machine learning
+ 5. Predecir ventas futuras
+ 6. Stock recomendado y ganancias estimadas
+ 7. Ver métricas de modelos entrenados
+ 8. Listar productos del catálogo
+ 9. Listar Ventas historicas
+ S. Salir
+============================================================
+Opción:

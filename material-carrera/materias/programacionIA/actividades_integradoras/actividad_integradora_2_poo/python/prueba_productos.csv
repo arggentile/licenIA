@@ -1,0 +1,4 @@
+codigo_producto,nombre,categoria,precio_venta,costo_unitario,stock_actual
+100000,Detergente Ala,LIMPIEZA,1200.0,8500.5,1000
+100001,Lava Vajillas,LIMPIEZA,22000.0,15000.5,1000
+100002,Yerba,ALMACEN,4000.0,1850.5,1000
