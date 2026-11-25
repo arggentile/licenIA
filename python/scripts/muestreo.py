@@ -29,7 +29,56 @@ def leer_flotante(mensaje, minimo=None, maximo=None):
         except ValueError:
             print("Entrada no válida. Ingrese un número real.")
 
+
 def mostrar_resultados_y_histograma(muestra, nombre_dist, discreta=False):
+    media = np.mean(muestra)
+    varianza = np.var(muestra)
+    n = len(muestra)
+
+    print("\n--- Resultados del muestreo ---")
+    print(f"Distribución:         {nombre_dist}")
+    print(f"Tamaño de la muestra: {n}")
+    print(f"Media aproximada:     {media:.5f}")
+    print(f"Varianza aproximada:  {varianza:.5f}")
+    print("Primeros 10 valores:", muestra[:10])
+    print("-------------------------------\n")
+
+    # Histograma
+    plt.figure()
+    if discreta:
+        min_val = int(np.min(muestra))
+        max_val = int(np.max(muestra))
+        bins = np.arange(min_val - 0.5, max_val + 1.5, 1)
+        plt.hist(muestra, bins=bins, edgecolor='black', rwidth=0.8)
+    else:
+        plt.hist(muestra, bins=20, edgecolor='black')
+
+    plt.title(f"Histograma - {nombre_dist}")
+    plt.xlabel("Valores")
+    plt.ylabel("Frecuencia")
+    plt.grid(True, linestyle="--", alpha=0.4)
+
+    # --- Caja con los resultados en la esquina superior derecha ---
+    texto = (
+        f"n = {n}\n"
+        f"media = {media:.4f}\n"
+        f"varianza = {varianza:.4f}"
+    )
+    plt.gca().text(
+        0.98, 0.97, texto,
+        transform=plt.gca().transAxes,   # coordenadas 0–1 relativas al eje
+        ha='right', va='top',
+        fontsize=10, family='monospace',
+        bbox=dict(boxstyle='round,pad=0.4',
+                  facecolor='white',
+                  edgecolor='gray',
+                  alpha=0.9)
+    )
+
+    plt.savefig(nombre_dist + ".png", bbox_inches='tight', dpi=120)
+    plt.close()
+    
+def mostrar_resultados_y_histogramas(muestra, nombre_dist, discreta=False):
     print("\n--- Resultados del muestreo ---")
     print(f"Distribución:          {nombre_dist}")
     print(f"Tamaño de la muestra: {len(muestra)}")
